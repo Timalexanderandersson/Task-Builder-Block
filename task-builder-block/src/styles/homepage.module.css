@@ -1,6 +1,6 @@
 .homepage{
     color: #edf6f9;
-    height: 50vh;
+    height: auto;
     animation: fadingin 1.2s ease-in-out;
 }
 
