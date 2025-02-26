@@ -101,6 +101,13 @@
         width: auto;
         padding-bottom: 20vh;
     }
+    .bigreg2{
+        padding-top: 6vh;
+        display: flex;
+        height: auto;
+        justify-content: center;
+        align-content: center;
+    }
     .registration2{
         width: 70%;
     }

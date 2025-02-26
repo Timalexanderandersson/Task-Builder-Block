@@ -21,7 +21,7 @@ const NavBar = () => {
                 <div className={styles.bigdiv}>
                     <div className={styles.navbar}>
                         <Link to="/" className={styles.navLink}>Home</Link>
-                        <Link to="/signin" className={styles.navLink}>Sign in</Link>
+                        <Link to="/login" className={styles.navLink}>Sign in</Link>
                         <Link to="/register" className={styles.navLink}>Register</Link>
                     </div>
                 </div>
@@ -32,7 +32,7 @@ const NavBar = () => {
                 <div className={styles.bigdiv1}>
                     <div className={styles.navbar}>
                         <Link to="/" className={styles.navLink}>Home</Link>
-                        <Link to="/signin" className={styles.navLink}>Sign in</Link>
+                        <Link to="/login" className={styles.navLink}>Sign in</Link>
                         <Link to="/register" className={styles.navLink}>Register</Link>
                     </div>
                 </div>

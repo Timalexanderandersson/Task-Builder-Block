@@ -13,7 +13,7 @@ const Homepagesite = () => {
                 <div className={styles.outsidediv}>
                 <div className={styles.insidediv}>
                     <Link to="/register" className={styles.linksinside}>Register</Link>
-                    <Link href="/" className={styles.linksinside}>Sign in</Link>
+                    <Link to="/login" className={styles.linksinside}>Sign in</Link>
                 </div>
             </div>
             </div>

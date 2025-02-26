@@ -5,6 +5,8 @@ import Footer from './pages/footer';
 import Homepagesite from './pages/homepage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Registrations from './pages/registration';
+import Login from './pages/signin';
+
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepagesite />} />
         <Route path="/register" element={<Registrations />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </div>
