@@ -1,7 +1,7 @@
 /*Header div*/
 .headerapp{
     height: auto;
-    max-height: 40vh;
+    max-height: 35.5vh;
     color: #edf6f9;
     animation: fadingin 1.2s ease-in-out;
 }
@@ -27,7 +27,7 @@
 
   /*Header div*/
 .headerapp{
-    height: 16vh;
+    max-height: 30vh;
     color: #edf6f9;
 
 }
@@ -51,7 +51,7 @@ font-size: 1.9rem;
   
   }
   .headerh1{
-  font-size: 1.9rem;
+  font-size: 2.1rem;
   }
   /*paragraph under header*/
   .paragraph{
