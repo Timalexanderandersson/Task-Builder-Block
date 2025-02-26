@@ -1,7 +1,7 @@
 /*Header div*/
 .headerapp{
     height: auto;
-    max-height: 35.5vh;
+    max-height: 36vh;
     color: #edf6f9;
     animation: fadingin 1.2s ease-in-out;
 }
@@ -22,7 +22,7 @@
     }
  
  }
-
+/*Media query for 400px*/
 @media screen and (min-width: 400px){
 
   /*Header div*/
@@ -42,6 +42,7 @@ font-size: 1.9rem;
 
 
 }
+/*Media query for 500px*/
 @media screen and (min-width: 500px){
 
     /*Header div*/
@@ -61,7 +62,7 @@ font-size: 1.9rem;
   
   
   }
-
+/*Media query for 768px*/
   @media screen and (min-width: 768px){
 
     /*Header div*/

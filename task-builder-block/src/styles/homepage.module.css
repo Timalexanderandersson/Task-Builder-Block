@@ -1,7 +1,53 @@
+/*Homepage container*/
 .homepage{
     color: #edf6f9;
     height: auto;
+    width: auto;
     animation: fadingin 1.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+}
+/*Inner div for content*/
+.innerdiv {
+    padding: 1vh;
+    height: 33vh;
+    border:1px solid rgb(0, 0, 0);
+    width: 90%;
+    max-width: 75vh;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+/*Links inside the center*/
+.outsidediv{
+height: 10vh;
+width: 100%;
+display: flex;
+justify-content: center;
+
+}
+.insidediv{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 70%;
+}
+
+/*Links style*/
+.linksinside{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+.linksinside:hover{
+   color: #90b7c4;
+   
 }
 
 @keyframes fadingin{
@@ -14,3 +60,21 @@
     }
  
  }
+ /*Media query for 400px*/
+@media screen and (min-width: 400px) {
+ 
+    .innerdiv {
+        height: 27vh;
+        width: 90%;
+        max-width: 75vh;
+      
+    }
+    .insidediv{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 70%;
+        max-width: 40vh;
+    }
+
+}

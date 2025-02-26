@@ -1,3 +1,4 @@
+/*Container for all divs*/
 .bigdiv {
     display: flex;
     justify-content: center;
@@ -50,6 +51,7 @@
     background-color: #90b7c4;
 
 }
+/*Links for bigger screen*/
 .hidinglink{
     display: none;
 }
@@ -68,7 +70,7 @@
 
 
 
-
+/*Media query for 400px*/
 @media screen and (min-width: 400px) {
  
     /*Container for Navbar links*/
@@ -88,7 +90,7 @@
     }
 
 }
-
+/*Media query for 500px*/
 @media screen and (min-width: 500px) {
     .hidinglink{
         display: flex;
@@ -112,6 +114,7 @@
     }
 
 }
+/*Media query for 600px*/
 @media screen and (min-width: 600px) {
 
     .bigdiv {
@@ -135,9 +138,8 @@ font-size: 1.2rem;
 
 
 }
-
+/*Media query for 768px*/
 @media screen and (min-width: 768px) {
-
     .bigdiv {
         display: flex;
         justify-content: center;
@@ -155,7 +157,6 @@ font-size: 1.2rem;
 font-size: 1.2rem;
         font-weight: 500;
     }
-
 
 
 }

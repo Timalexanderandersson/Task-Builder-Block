@@ -1,13 +1,22 @@
-import React from "react" 
+import React from "react"
 import styles from "../styles/homepage.module.css"
+import { Link } from "react-router-dom";
 
 
 const Homepagesite = () => {
 
-    return(
+    return (
         <div className={styles.homepage}>
-            <h1>this is the homepage</h1>
-            <p>Just a quick reminder for all your tasks</p>
+            <div className={styles.innerdiv}>
+                <h2 className="mt-2">Need a reminder for your daily task?</h2>
+                <p className="mt-2">Get an account and get started using task builder block</p>
+                <div className={styles.outsidediv}>
+                <div className={styles.insidediv}>
+                    <Link to="/register" className={styles.linksinside}>Register</Link>
+                    <Link href="/" className={styles.linksinside}>Sign in</Link>
+                </div>
+            </div>
+            </div>
         </div>
     )
 }
