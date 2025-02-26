@@ -1,7 +1,7 @@
 /*Header div*/
 .headerapp{
     height: auto;
-    max-height: 36vh;
+    height: 25vh;
     color: #edf6f9;
     animation: fadingin 1.2s ease-in-out;
 }

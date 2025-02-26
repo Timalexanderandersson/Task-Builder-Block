@@ -1,10 +1,10 @@
 import React from "react"
-import styles from "../styles/registration.module.css"
+import styles from "../styles/signup.module.css"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 
-const Registrations = () => {
+const Signup = () => {
 
     return (
         <div className={styles.bigreg}>
@@ -39,4 +39,4 @@ const Registrations = () => {
     )
 }
 
-export default Registrations;
+export default Signup;

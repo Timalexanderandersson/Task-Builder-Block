@@ -3,6 +3,11 @@
     display: flex;
     justify-content: center;
 }
+.bigdiv1{
+    display: flex;
+    justify-content: center;
+    
+}
 
 /*Container for Navbar links*/
 .navbar {
@@ -81,6 +86,7 @@
         flex-direction: column;
 
     }
+   
 
     /*every link*/
     .navLink {
@@ -106,6 +112,9 @@
         flex-direction: row;
 
 
+    }
+    .bigdiv1{
+        display: none;
     }
 
     .bigdiv {
