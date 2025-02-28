@@ -32,10 +32,8 @@ const Registrations = () => {
         try {
             await api.post('/dj-rest-auth/registration/', registers)
             navigate('/')
-            console.log("fungerade")
         } catch (error) {
             setError(error.response.data)
-            console.log("inte")
         }
 
     }

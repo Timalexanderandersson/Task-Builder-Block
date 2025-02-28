@@ -60,6 +60,18 @@
 .hidinglink{
     display: none;
 }
+.username{
+    font-weight: 500;
+    color: rgb(194, 221, 236);
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+.modals{
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border:1px solid rgb(0, 0, 0);
+    color: #edf6f9;
+}
 
 @keyframes fadingin {
     0% {

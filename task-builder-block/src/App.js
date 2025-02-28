@@ -6,6 +6,7 @@ import Homepagesite from './pages/homepage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Registrations from './pages/registration';
 import Login from './pages/signin';
+import Errorpage from './pages/nopage404';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Homepagesite />} />
         <Route path="/register" element={<Registrations />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Errorpage />} />
       </Routes>
       <Footer />
     </div>

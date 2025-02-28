@@ -38,9 +38,11 @@ const Login = () => {
         try {
             const { data } = await api.post('/dj-rest-auth/login/', logins);
             setUpUser(data.user);
+            localStorage.setItem("currentUser", JSON.stringify(data));
             navigate('/')
         } catch (error) {
             setError(error.response.data)
+            console.log("Login error:", error.response.data);
         }
 
     }
