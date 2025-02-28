@@ -11,7 +11,7 @@ import Login from './pages/signin';
 function App() {
   return (
    
-    <Router>
+    
     <div className="App">
       <Headerwithnav />
       <Routes>
@@ -21,7 +21,7 @@ function App() {
       </Routes>
       <Footer />
     </div>
-  </Router>
+  
   );
 }
 

@@ -1,18 +1,22 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import styles from "../styles/registration.module.css"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from "react-router-dom";
+import api from '../api/api'
 
 
 const Registrations = () => {
 
     const [registers, setRegisters] = useState({
         'username':"",
-        'password':"",
+        'password1':"",
         'password2':"",
     })
+    const navigate = useNavigate();
+    const [errors, setError] = useState({})
 
-    const {username, password, password2} = registers;
+    const {username, password1, password2} = registers;
 
     const handleChange = (event) => {
         setRegisters({
@@ -22,12 +26,16 @@ const Registrations = () => {
 
     }
 
+
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            
+            await api.post('/dj-rest-auth/registration/', registers)
+            navigate('/')
+            console.log("fungerade")
         } catch (error) {
-            
+            setError(error.response.data)
+            console.log("inte")
         }
 
     }
@@ -38,7 +46,7 @@ const Registrations = () => {
             <div className={styles.registration}>
                 <div className={styles.registration2}>
                 <h3 className="mt-2">Sign up to use Task builder block 🚀</h3>
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicUsername">
                         <Form.Label>Username</Form.Label>
                         <Form.Control 
@@ -47,18 +55,21 @@ const Registrations = () => {
                         value={username}
                          placeholder="Enter username"
                          onChange={handleChange} />
+                         {errors.username}
                     </Form.Group>
+                    
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
                         <Form.Control 
                         type="password"
                          placeholder="Enter password"
-                         name="password"
-                         value={password}
+                         name="password1"
+                         value={password1}
                          onChange={handleChange} />
+                         {errors.password1}
                     </Form.Group>
-
+                    
                     <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
                         <Form.Label>Confirm Password</Form.Label>
                         <Form.Control 
@@ -67,7 +78,9 @@ const Registrations = () => {
                          name="password2"
                          value={password2}
                          onChange={handleChange} />
+                         {errors.password2}
                     </Form.Group>
+                    
                     <Button  type="submit" className={styles.buttonsubmit}>
                         Register
                     </Button>
