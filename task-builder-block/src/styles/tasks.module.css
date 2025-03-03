@@ -1,0 +1,98 @@
+/*Container for task*/
+.containertask{
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadingin 1.2s ease-in-out;
+}
+/*Container for the task id*/
+.innercontainer{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    color: white;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    width: 90%;
+    height: auto;
+    transition: background-color 0.3s ease;
+    transition: 0.3s ease-in-out;
+    padding: 1vh;
+}
+
+.checkingbooox{
+    font-size: rem;
+
+}
+.paragraph{
+    margin-top: 3vh;
+    text-decoration: underline;
+    font-size: 1.1rem;
+}
+.buttonsubmit{
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border-radius: 4px;
+    padding: 2px;
+    border: 1px solid white;
+    margin-bottom: 1vh;
+    margin:2vh;
+    text-decoration: none;
+
+}
+.buttonsubmitdelete{
+    background-color: rgba(194, 73, 73, 0.4);
+    color: white;
+    border-radius: 4px;
+    padding: 2px;
+    border: 1px solid white;
+    margin-bottom: 1vh;
+    margin:2vh;
+    text-decoration: none;
+
+}
+.buttonsubmitsecond{
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    color: white;
+    border-radius: 4px;
+    padding: 2px;
+    border: 1px solid white;
+    margin-bottom: 1vh;
+
+}
+
+.buttonsubmit:hover, .buttonsubmitsecond:hover, .buttonsubmitdelete:hover{
+    background-color: rgba(223, 223, 223, 0.4) !important;
+}
+.buttonsubmitdelete:hover{
+    background-color: rgba(241, 29, 29, 0.4) !important;
+}
+
+
+.checked {
+    background-color: rgba(180, 240, 180, 0.5)
+}
+@keyframes fadingin{
+    0%{
+     opacity: 0;
+     
+    } 
+    100% {
+     opacity:1
+    }
+
+ }
+
+ /*Media query for 768px*/
+@media screen and (min-width: 768px) {
+ 
+/*Container for the task id*/
+.innercontainer{
+    max-width: 80vh;
+    height: auto;
+ 
+}
+  
+}

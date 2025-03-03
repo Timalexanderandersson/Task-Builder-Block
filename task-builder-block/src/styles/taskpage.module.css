@@ -1,0 +1,50 @@
+.taskpagediv{
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    color: white;
+    animation: fadingin 1.2s ease-in-out;
+}
+.taskpagediv1{
+    width: 90%;
+    height: 90%;
+    border:1px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+}
+.taskpagediv2{
+width: 80%;
+padding-bottom: 4px;
+}
+
+.buttonsubmit{
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    border:1px solid rgb(204, 203, 203) !important;
+
+}
+
+.buttonsubmit:hover{
+    background-color: rgba(223, 223, 223, 0.4) !important;
+}
+@keyframes fadingin{
+    0%{
+     opacity: 0;
+     
+    } 
+    100% {
+     opacity:1
+    }
+ 
+ }
+
+  /*Media query for 768px*/
+@media screen and (min-width: 768px) {
+
+    .taskpagediv1{
+      max-width: 80vh;
+    }
+      
+    }

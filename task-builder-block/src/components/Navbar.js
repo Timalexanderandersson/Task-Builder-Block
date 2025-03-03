@@ -45,7 +45,7 @@ const NavBar = () => {
             {newUser ? (
                 <>
                     <Link to="/" className={styles.navLink}>Home</Link>
-                    <Link to="/" className={styles.navLink}>Tasks</Link>
+                    <Link to="/tasks" className={styles.navLink}>Tasks</Link>
                     <Link onClick={handleShow} className={styles.navLink}>Logout</Link>
                     
 

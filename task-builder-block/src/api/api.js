@@ -8,4 +8,11 @@ const api = axios.create({
 api.defaults.headers.post['Content-Type'] = 'multipart/form-data';
 api.defaults.withCredentials = true;
 
+const token = localStorage.getItem('access_token');
+
+if (token) {
+  api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+}
+
+
   export default api;

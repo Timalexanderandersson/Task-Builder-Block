@@ -13,7 +13,7 @@ export const Userinformation = ({ children }) => {
     
     const collectInfo = async () => {
       try {
-        const { data } = await api.post("/dj-rest-auth/user/");
+        const { data } = await api.get("/dj-rest-auth/user/");
         setCurrentuser(data);
       } catch (err) {}
     };
