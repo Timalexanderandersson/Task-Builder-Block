@@ -40,13 +40,11 @@ const Gettingtasks = ({ tasks }) => {
                 <div 
                     key={task.id}
                     className={`${styles.innercontainer} ${checked[task.id] ? styles.checked : ""}`}
-                >
+                ><button onClick={() => toggleTask(task.id)} className={styles.buttonsubmitsecond}>
+                {expandedTasks[task.id] ? "Close " : "Open"}
+            </button>
                     <div className={styles.divfortask}>
                         <h1>{task.title}</h1>
-                        <button onClick={() => toggleTask(task.id)} className={styles.buttonsubmitsecond}>
-                            {expandedTasks[task.id] ? "Close " : "Open"}
-                        </button>
-
                         {expandedTasks[task.id] && (
                             <>
                                 <h5>Description</h5>
@@ -61,7 +59,7 @@ const Gettingtasks = ({ tasks }) => {
                                 </div>
                                 <p> Created at <strong>{task.created_at}</strong></p>
                                 <Link to={`/delete/${task.id}`} className={styles.buttonsubmitdelete}>Delete task</Link>
-                                <button className={styles.buttonsubmit}>Edit task</button>
+                                <Link to={`/edit/${task.id}`}className={styles.buttonsubmit}>Edit task</Link>
                      
                             </>
                         )}
