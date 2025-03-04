@@ -32,6 +32,7 @@ const NavBar = () => {
             setUserNow(null);
             handleClose(true)
             localStorage.removeItem("currentUser");
+            localStorage.removeItem("checkedTasks");
             navigate('/');
         } catch (error) {
 
