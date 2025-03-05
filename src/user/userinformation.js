@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import api from "../api/api";
+import axios from "axios";
 
 
 export const CurrentUserInfo = createContext();
@@ -8,12 +8,12 @@ export const SetCurrentUserInfo = createContext();
 export const Userinformation = ({ children }) => {
 
     const [currentuser, setCurrentuser] = useState(null)
-    const [errors, setError] = useState({})
+    
 
     
     const collectInfo = async () => {
       try {
-        const { data } = await api.get("/dj-rest-auth/user/");
+        const { data } = await axios.get("/dj-rest-auth/user/");
         setCurrentuser(data);
       } catch (err) {}
     };
@@ -26,8 +26,7 @@ export const Userinformation = ({ children }) => {
         setCurrentuser(thisisuser);
         collectInfo();
       }
-      
-    }, []);
+    },[]);
 
 
     return (

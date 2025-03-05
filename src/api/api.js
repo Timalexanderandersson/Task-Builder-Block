@@ -1,11 +1,8 @@
-import axios from "axios"
+import axios from "axios";
 
 
-const api = axios.create({
-  baseURL: 'https://task-builder-block-api-1e0f4e59bae3.herokuapp.com/',  
+axios.defaults.baseURL = 'https://task-builder-block-api-1e0f4e59bae3.herokuapp.com';
+axios.defaults.headers.post['Content-type'] = 'multipart/form-data';
+axios.defaults.withCredentials = true;
 
-});
-api.defaults.headers.post['Content-Type'] = 'multipart/form-data';
-api.defaults.withCredentials = true;
-
-  export default api;
+export default axios;

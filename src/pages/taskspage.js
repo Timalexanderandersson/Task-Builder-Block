@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import styles from "../styles/taskpage.module.css";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import api from '../api/api';
+import axios from "axios";
 import Gettingtasks from "../components/taskmap";
+import { useNavigate } from "react-router-dom";
 
 const Taskpage = () => {
    
@@ -12,6 +13,7 @@ const Taskpage = () => {
         description: "",
     });
 
+    const navigate = useNavigate();
    const [errors, setError] = useState({})
   
    const [showing, setShowing] = useState([])
@@ -29,14 +31,14 @@ const Taskpage = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const { data } = await api.post('/creating-task/', task, showing);
-            console.log("Ny uppgift tillagd:", data);
+            const { data } = await axios.post('/tasks/', task, showing);
+            
             setShowing((preTask) => [data, ...preTask])
             setTask({ title: "", description: "" });
             
             setShowForm(false);
         } catch (error) {
-            console.error("Fel vid skapandet av uppgift:", error);
+           
             setError(error.response.data)
         }
     };
@@ -44,13 +46,14 @@ const Taskpage = () => {
      useEffect(() =>{
                 const fetchTask = async () => {
                     try {
-                        const getTask = await api.get('/tasks/');
-                        setShowing(getTask.data)
+                        const getTask = await axios.get('/tasks/');
+                        setShowing(getTask.data);
                     } catch (error) {
-                        console.log("hämtade inte alls");
+                       
                     }
                 }
                 fetchTask();
+                
             },[])
    
     

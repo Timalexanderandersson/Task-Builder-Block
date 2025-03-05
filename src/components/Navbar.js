@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useState } from "react"
 import styles from "../styles/navbar.module.css"
 import { Link, useNavigate } from 'react-router-dom';
 import { CurrentUserInfo, SetCurrentUserInfo } from "../user/userinformation";
-import api from "../api/api";
+import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+
 
 
 
@@ -27,12 +28,16 @@ const NavBar = () => {
     }
 
     const handleLogout = async () => {
+          
         try {
-            const response = await api.post('/dj-rest-auth/logout/');
+            await axios.post('/dj-rest-auth/logout/');
+            localStorage.removeItem("currentUser");
+            localStorage.removeItem("token");
+            document.cookie = "my-app-auth=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.cookie = "my-refresh-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            
             setUserNow(null);
             handleClose(true)
-            localStorage.removeItem("currentUser");
-            localStorage.removeItem("checkedTasks");
             navigate('/');
         } catch (error) {
 

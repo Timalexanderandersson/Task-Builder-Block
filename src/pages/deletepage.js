@@ -3,6 +3,7 @@ import styles from "../styles/homepage.module.css"
 import { Link, useNavigate, useParams } from "react-router-dom";
 import style from "../styles/tasks.module.css";
 import api from "../api/api";
+import axios from "axios";
 
 
 const Deletepage = () => {
@@ -11,10 +12,10 @@ const Deletepage = () => {
 
     const handleDelete = async () =>{
         try {
-            await api.delete(`tasks/${taskId}`)
+            await axios.delete(`tasks/${taskId}`)
             navigate('/tasks')
         } catch (error) {
-            console.error("Error deleting task:", error);
+            
         }
     }
 

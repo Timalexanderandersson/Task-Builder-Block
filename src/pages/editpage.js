@@ -5,6 +5,7 @@ import style from "../styles/tasks.module.css";
 import api from "../api/api";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import axios from "axios";
 
 
 const Editpage = () => {
@@ -30,7 +31,7 @@ const Editpage = () => {
     useEffect(() => {
         const gettingtaskfunc = async () =>{
             try {
-                const { data } = await api.get(`/tasks/${taskId}`)
+                const { data } = await axios.get(`/tasks/${taskId}`)
                 setTask({
                     title:data.title,
                     description:data.description
@@ -49,7 +50,7 @@ const Editpage = () => {
         datasave.append('title', title)
         datasave.append('description', description)
         try {
-            await api.put(`/tasks/${taskId}`,{
+            await axios.put(`/tasks/${taskId}`,{
                 title: title,
                 description: description
             });

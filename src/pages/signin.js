@@ -4,8 +4,9 @@ import styles2 from "../styles/singup.module.css"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from "react-router-dom";
-import api from '../api/api'
-import { SetCurrentUserInfo, CurrentUserInfo } from "../user/userinformation";
+
+import { SetCurrentUserInfo } from "../user/userinformation";
+import axios from "axios";
 
 
 
@@ -36,16 +37,15 @@ const Login = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const { data } = await api.post('/dj-rest-auth/login/', logins);
+            const { data } = await axios.post('/dj-rest-auth/login/', logins);
+            localStorage.setItem("currentUser", JSON.stringify(data.user));
             setUpUser(data.user);
-            localStorage.setItem("currentUser", JSON.stringify(data));
-            navigate('/')
+            navigate('/');
         } catch (error) {
-            setError(error.response.data)
-            console.log("Login error:", error.response.data);
+            setError(error.response.data); 
         }
-
-    }
+    };
+    
 
     return (
         <div className={styles.bigreg}>

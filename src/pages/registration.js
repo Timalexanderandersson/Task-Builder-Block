@@ -3,7 +3,8 @@ import styles from "../styles/registration.module.css"
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from "react-router-dom";
-import api from '../api/api'
+
+import axios from "axios";
 
 
 const Registrations = () => {
@@ -30,7 +31,7 @@ const Registrations = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            await api.post('/dj-rest-auth/registration/', registers)
+            await axios.post('/dj-rest-auth/registration/', registers)
             navigate('/')
         } catch (error) {
             setError(error.response.data)
